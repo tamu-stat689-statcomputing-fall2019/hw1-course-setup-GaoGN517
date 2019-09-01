@@ -9,7 +9,7 @@ beta = rep(2,p) # true vector of coefficients
 X = matrix(rnorm(n*p), n, p) # n by p matrix of predictors
 
 # [ToDo] Use generateY function to generate Y
-
+Y = generateY(X, beta, sigma)
 # [ToDo] Use calculateBeta function to calculate beta_LS
 
 # [ToDo] Use calculateMSE to assess the estimation error measured by squared eucledian distance - ||beta - beta_LS||_2^2
