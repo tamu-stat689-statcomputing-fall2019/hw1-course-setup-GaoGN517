@@ -11,8 +11,12 @@ generateY <- function(X, beta, sigma, seed = 5832652){
   
   # Get length of Y
   n <- nrow(X)
+  
+  # Calculate epsilon
+  epsilon <- rnorm(n, mean = 0, sd = sigma)
+  
   # Generate Y
-  Y <- rnorm(n, mean = crossprod(X, beta), sd = sigma)
+  Y <- crossprod(X, beta) + epsilon
   
   # Return Y
   return(Y)
@@ -23,6 +27,7 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # Y -response
 calculateBeta <- function(X, Y){
   # Calculate beta_LS
+  beta_LS <- crosspod(solve(crossprod(X)), crossprod(t(X), Y))
   
   # Return beta
   return(beta_LS)
