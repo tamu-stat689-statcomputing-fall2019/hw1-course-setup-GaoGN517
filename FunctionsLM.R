@@ -27,7 +27,7 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # Y -response
 calculateBeta <- function(X, Y){
   # Calculate beta_LS
-  beta_LS <- crosspod(solve(crossprod(X)), crossprod(t(X), Y))
+  beta_LS <- solve(crossprod(X), crossprod(X, Y))
   
   # Return beta
   return(beta_LS)
