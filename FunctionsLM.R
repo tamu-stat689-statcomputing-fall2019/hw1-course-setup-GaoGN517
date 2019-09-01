@@ -16,7 +16,7 @@ generateY <- function(X, beta, sigma, seed = 5832652){
   epsilon <- rnorm(n, mean = 0, sd = sigma)
   
   # Generate Y
-  Y <- crossprod(X, beta) + epsilon
+  Y <- crossprod(t(X), beta) + epsilon
   
   # Return Y
   return(Y)
