@@ -85,3 +85,10 @@ if (test3 == 1){
 }
 print(paste("Total number of correctness points is", npoints, "out of 50 points", sep=" "))
 # [1] "Total number of correctness points is 52 out of 50 points"
+
+# Time issue:
+library(microbenchmark)
+microbenchmark(
+  generateY(X, beta, sigma),
+  generateYIrina(X, beta, sigma)
+)

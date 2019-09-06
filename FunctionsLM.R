@@ -22,6 +22,20 @@ generateY <- function(X, beta, sigma, seed = 5832652){
   return(Y)
 }
 
+generateY2 <- function(X, beta, sigma, seed = 5832652){
+  #[ToDo] Set seed and generate Y following linear model
+  set.seed(seed)
+  
+  # Get length of Y
+  n <- nrow(X)
+  
+  # Generate Y = Xbeta + epsilon
+  Y <- X %*% beta + rnorm(n) * sigma
+  
+  # Return Y
+  return(Y)
+}
+
 # Calculate beta_LS - least-squares solution, do not use lm function
 # X - design matrix
 # Y -response
